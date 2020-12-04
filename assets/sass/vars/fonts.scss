@@ -1,0 +1,30 @@
+@mixin fontFace($FontName, $FontPathName, $type: 'otf') {
+  @font-face {
+    font-family: '#{$FontName}';
+    src: url('/assets/fonts/#{$FontPathName}/#{$FontName}.#{$type}');
+    src: url('~assets/fonts/#{$FontPathName}/#{$FontName}.#{$type}');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+}
+/* stylelint-disable */
+@include fontFace('Roboto-Regular', 'Roboto', 'ttf');
+$font-1r: 'Roboto-Regular', sans-serif;
+@include fontFace('Roboto-Bold', 'Roboto', 'ttf');
+$font-1b: 'Roboto-Bold', sans-serif;
+
+@include fontFace('Stapel_Regular', 'Stapel');
+$font-2r: 'Stapel_Regular', sans-serif;
+@include fontFace('Stapel_Bold', 'Stapel');
+$font-2b: 'Stapel_Bold', sans-serif;
+
+@include fontFace('Stereo_Gothic_800', 'StereoGothic', 'ttf');
+$font-3: 'Stereo_Gothic_800', sans-serif;
+
+@include fontFace('AcuminPro-Regular', 'AcuminPro', 'otf');
+$font-acumin-r: 'AcuminPro-Regular', sans-serif;
+
+@include fontFace('AcuminPro-Bold', 'AcuminPro', 'otf');
+$font-acumin-b: 'AcuminPro-Bold', sans-serif;
+/* stylelint-enable */

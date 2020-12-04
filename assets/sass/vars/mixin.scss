@@ -1,0 +1,28 @@
+@mixin center() {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// mixin for inline media
+@mixin media($media) {
+  @media only screen and (max-width: $media) {
+    @content;
+  }
+}
+@mixin landscape($media) {
+  @media only screen and (orientation: landscape) and (max-width: $media) {
+    @content;
+  }
+}
+
+@mixin Safari {
+  @media screen and (min-color-index: 0) and(-webkit-min-device-pixel-ratio: 0) {
+    @content;
+  }
+}
+
+@function vw($px-vw, $base-vw: 1440px) {
+  @return ($px-vw * 100vw) / $base-vw;
+}
